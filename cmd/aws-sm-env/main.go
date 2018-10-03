@@ -4,6 +4,7 @@ import (
   "encoding/json"
   "fmt"
   "flag"
+  "os"
   "github.com/aws/aws-sdk-go/aws"
   "github.com/aws/aws-sdk-go/aws/awserr"
   "github.com/aws/aws-sdk-go/aws/session"
@@ -57,7 +58,7 @@ func main() {
   result, err := svc.GetSecretValue(input)
   if err != nil {
     handleError(err)
-    return
+    os.Exit(-1)
   }
   if(*is_json) {
     var json_data map[string]interface{}
