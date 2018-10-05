@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ "$AWS_SM_ENV_OPTIONS" != "" ];then
   ENV_OUTPUT=$(aws-sm-env $AWS_SM_ENV_OPTIONS)
   ENV_RC=$?
