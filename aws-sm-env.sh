@@ -11,7 +11,6 @@ if [ "$AWS_SM_ENV_OPTIONS" != "" ];then
 fi
 if [ "$AWS_SM_FILE" != "" -a "$AWS_SM_FILE_OPTIONS" != "" ];then
   FILE_OUTPUT=$(aws-sm-env $AWS_SM_FILE_OPTIONS)
-  echo $FILE_OUTPUT
   FILE_RC=$?
   if [ "$FILE_RC" -eq "0" ];then
     echo $FILE_OUTPUT > $AWS_SM_FILE
